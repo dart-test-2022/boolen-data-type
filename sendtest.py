@@ -11,7 +11,7 @@ data = json.load(f)
 
 j = 0
 for i in data:
-    i['name'] = i['name'].split('.')[0]
+    i['name'] = i['name'].split('_')[0]
     data[j] = i
     j += 1
 
