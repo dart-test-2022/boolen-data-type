@@ -25,7 +25,7 @@ parser.add_argument('changed_files', help='changed files')
 
 arg = parser.parse_args()
 
-changed_files = arg.changed_files.split()
+changed_files = [f.split('.')[0] for f in arg.changed_files.split()]
 print('*'*10 + 'changed files' + '*'*10)
 print(changed_files)
 
