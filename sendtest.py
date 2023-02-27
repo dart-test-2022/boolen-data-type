@@ -9,11 +9,11 @@ url = 'https://codeschoolhomeworkapi.pythonanywhere.com/'
 f = open('data.json', 'r')
 data = json.load(f)
 
-# j = 0
-# for i in data:
-#     i['name'] = i['name'].split('.')[0]
-#     data[j] = i
-#     j += 1
+j = 0
+for i in data:
+    i['name'] = i['name'].split('.')[0]
+    data[j] = i
+    j += 1
 
 print('*'*10 + 'data' + '*'*10)
 pprint(data)
