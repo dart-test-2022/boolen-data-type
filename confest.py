@@ -1,12 +1,10 @@
 import json
 
-
 with open('tests.json', 'r') as f:
 
     tests = {}
     tests_id = {}
     bad_id = []
-
 
     for line in f.readlines():
         jline = json.loads(line)
@@ -51,7 +49,9 @@ for task_name in keys:
     else:
         dct['isSolved'] = False
     lst.append(dct)
+    print(dct)
 
+print(tests)
 with open('data.json', 'w') as f1:
     json.dump(lst, f1, indent=4, separators=(',', ':'))
     print('finish')
