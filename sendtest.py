@@ -8,15 +8,13 @@ url = 'http://codeschooluzapi.pythonanywhere.com/lesson/'
 
 f = open('data.json', 'r')
 data = json.load(f)
-pprint(data)
+
 parser = argparse.ArgumentParser()
 parser.add_argument('github', help='github username')
 parser.add_argument('repo', help='repository | homework')
 parser.add_argument('changed_files', help='changed files')
 
 arg = parser.parse_args()
-
-print(arg.changed_files)
 
 tasks = []
 i = 0
@@ -33,9 +31,9 @@ dct = {
     "course": "Dart Foundation",
     "assignment": arg.repo.split("/")[-1]
 }
-pprint(dct)
+
 f.close()
-pprint(dct)
+
 r = requests.post(url+'submission/add/', json=dct)
 print(r.status_code)
 
